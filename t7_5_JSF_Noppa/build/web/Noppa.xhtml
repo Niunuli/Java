@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="x-iso-8859-11"?>
+<!--
+Tehtava 7-5: Noppa-sovellus JSF2.0:n avulla.
+Kayttoliittymana faceletti ja sovelluslogiikka JSF Managed Beaniin
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+        <title>TODO supply a title</title>
+    </head>
+    <body>
+        <ui:composition template="./template.xhtml">
+            <ui:define name="title">
+                Noppa
+            </ui:define>
+            <ui:define name="box">
+
+                <h4>Heita noppaa!</h4>
+
+                <h:form>
+                    <p>Silmaluvuksi tuli : <h:outputText value="#{NoppaBean.tulos}" /></p>
+                    <p>Heittojen summa: <h:outputText value="#{NoppaBean.summa}" /></p>
+                    <p>Heittojen lkm: <h:outputText value="#{NoppaBean.lkm}" /></p>
+                    <p>Heittojen keskiarvo: <h:outputText value="#{NoppaBean.ka}" /></p>     
+
+                    <h:commandButton id="heita" value="Heita" action="#{NoppaBean.heita()}" />
+                    <h:commandButton id="nollaa" value="Nollaa" action="#{NoppaBean.nollaa()}" />
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>
